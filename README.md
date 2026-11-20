@@ -35,12 +35,13 @@ Loki 是 [DBX](https://github.com/t8y2/dbx)（开源数据库工作台）的插�
 
 - 「问 AI」：把当前日志样本发给 DBX 内置 AI 分析。
 - 4 个只读 AI 工具：`loki_labels`、`loki_label_values`、`loki_query_logs`、`loki_query_metrics`。在 插件中心 → 已安装 → 内置 AI 工具 中开启后，Agent 模式下可以直接问「api 服务过去一小时为什么报错」。
+- 外部 MCP：在 设置 → MCP → 能力 中开启并授权插件后，这 4 个只读工具会以 `dbx_loki__loki_labels`、`dbx_loki__loki_label_values`、`dbx_loki__loki_query_logs`、`dbx_loki__loki_query_metrics` 进入 dbx MCP Server，Claude Code、Cursor 等任何 MCP 客户端都能直接查询 Loki 日志，无需单独配置插件进程。
 
 界面支持中文和英文，跟随 DBX 的浅色 / 深色主题。
 
 ## 环境要求
 
-- DBX 0.6.43 或更高版本。
+- DBX 0.6.59 或更高版本。
 - 可通过 HTTP API 访问的 Grafana Loki，或兼容 Loki API 的网关。已在 Loki 3.5.0 上验证。
 - 发布产物覆盖 5 个平台：macOS（Apple Silicon / Intel）、Windows x64、Linux（x64 / arm64）。
 

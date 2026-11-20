@@ -35,12 +35,13 @@ Loki is a plugin for [DBX](https://github.com/t8y2/dbx), the open-source databas
 
 - "Ask AI" sends a sample of the current lines to the DBX built-in AI.
 - Four read-only AI tools: `loki_labels`, `loki_label_values`, `loki_query_logs` and `loki_query_metrics`. Turn them on under Plugin Center → Installed → AI tools, then ask in Agent mode, e.g. "why did the api service fail in the last hour".
+- External MCP: after enabling and authorizing the plugin under Settings → MCP → Capabilities, the four read-only tools appear on the dbx MCP server as `dbx_loki__loki_labels`, `dbx_loki__loki_label_values`, `dbx_loki__loki_query_logs` and `dbx_loki__loki_query_metrics`, so any MCP client (Claude Code, Cursor, ...) can query Loki logs without a separate per-plugin process configuration.
 
 The UI is available in English and Chinese and follows the DBX light or dark theme.
 
 ## Requirements
 
-- DBX 0.6.43 or later.
+- DBX 0.6.59 or later.
 - Grafana Loki, or a gateway serving the Loki HTTP API. Verified with Loki 3.5.0.
 - Release builds cover 5 targets: macOS (Apple Silicon / Intel), Windows x64 and Linux (x64 / arm64).
 
